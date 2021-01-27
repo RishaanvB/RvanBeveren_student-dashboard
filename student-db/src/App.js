@@ -1,36 +1,32 @@
-import studentsData from "./mock-data/students.json";
-import { VictoryBar, VictoryChart, VictoryAxis } from "victory";
+import "./App.css";
+import studentDB from "./mock-data/students.json";
 
 function App() {
-  const evelyn = studentsData
-    .filter((student) => student.name === "Evelyn")
-    .slice(0, 10);
-  console.log(evelyn);
-  return (
-    <div>
-      <h1>VictoryBar</h1>
-      <VictoryChart domainPadding={20}>
-        <VictoryAxis
-          tickValues={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
-          tickFormat={[
-            "wk1",
-            "wk2",
-            "wk3",
-            "wk4",
-            "wk5",
-            "wk6",
-            "wk7",
-            "wk8",
-          ]}
-        />
-        <VictoryAxis 
-        dependentAxis
-        tickValues={[1, 2, 3, 4, 5]}
-        tickFormat={(x)=> (`${x} pnt`)}/>
-        <VictoryBar data={evelyn} x={"assignment"} y={"difficulty-rating"} />
-      </VictoryChart>
-    </div>
-  );
+  // get an array from all assignments
+  //compare the value from that array with students.json
+  //and then take the difficultyrating and push it to the 2nd index of the array
+
+  const getAvgRating = () => {
+    const filteredByAssignment = studentDB.map((student) => student.assignment);
+    const uniqueAssignments = [...new Set(filteredByAssignment)];
+    const sortedByAssignment = uniqueAssignments.map((assignment) => [
+      assignment,
+      studentDB
+        .filter((student) => student.assignment === assignment)
+        .map((student) => student["difficultyRating"]),
+    ]);
+    const reducer = (acc, curr) => acc + curr;
+    const avgRating = sortedByAssignment.map((item) => [
+      item[0],
+      item[1].reduce(reducer) / item[1].length,
+    ]);
+    return avgRating
+    console.log(avgRating, "avg");
+  };
+  console.log(getAvgRating());
+ 
+
+  return <div>App</div>;
 }
 
 export default App;
