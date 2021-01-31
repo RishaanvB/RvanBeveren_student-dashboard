@@ -1,15 +1,32 @@
 import "./App.css";
-// import studentDB from "./mock-data/students.json";
-import StudentsOverview from "./Containers/StudentsOverview";
-import GraphContainer from "./Containers/GraphContainer";
+import StateContainer from "./Containers/StateContainer";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import StudentNav from "./Containers/StudentNav";
+import StudentDetails from "./Components/StudentDetails";
 
 function App() {
   return (
     <div>
-      {/* <StudentsOverview /> */}
-      <GraphContainer />
+      <Router>
+        <StudentNav />
+        <Switch>
+         
+          <Route exact path="/">
+            <StateContainer />
+          </Route>
+
+          <Route path="/students/:name">
+            <StudentDetails />
+          </Route>
+        
+        </Switch>
+      </Router>
     </div>
   );
 }
 
 export default App;
+
+// graphscontainer
+//          allstudents
+//          inidividueel student
