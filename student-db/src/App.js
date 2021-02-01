@@ -1,6 +1,5 @@
 import "./App.css";
-import StateContainer from "./Containers/StateContainer";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import StudentNav from "./Containers/StudentNav";
 import StudentDetails from "./Components/StudentDetails";
 
@@ -12,7 +11,7 @@ function App() {
         <Switch>
          
           <Route exact path="/">
-            <StateContainer />
+          <Redirect to="/students/All" /> 
           </Route>
 
           <Route path="/students/:name">

@@ -4,8 +4,8 @@
 
 import { VictoryChart, VictoryGroup, VictoryBar, VictoryAxis } from "victory";
 
-function Student({studentName, singleStudentData}) {
-
+function Student({studentName, singleStudentData, showDifficultyRating, showFunRating}) {
+console.log(studentName, "stujdentName");
   // const handleChange = () => {
   //   const evelyn = studentDB.filter((student) => student.name === "Evelyn");
   //   setFunData(evelyn);
@@ -26,20 +26,19 @@ function Student({studentName, singleStudentData}) {
           style={{ tickLabels: { fontSize: 8, padding: 5 } }}
         />
 
-        <VictoryGroup offset={2} colorScale={"qualitative"}>
-          <VictoryBar
-            animate={{ duration: 500 }} // werkt niet zoals ik verwacht..???
+       <VictoryGroup offset={2} colorScale={"qualitative"}>
+      
+       { showFunRating && <VictoryBar
             data={singleStudentData}
             x={"assignment"}
             y={"funRating"}
-          />
+          />}
 
-          <VictoryBar
-            animate={{ duration: 500 }}
+         { showDifficultyRating && <VictoryBar
             data={singleStudentData}
             x={"assignment"}
             y={"difficultyRating"}
-          />
+          />}
         </VictoryGroup>
       </VictoryChart>
     </>
