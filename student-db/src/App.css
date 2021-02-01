@@ -1,13 +1,12 @@
-
-
-body {
-  color: red;
-}
-
-a  {
-  margin: 20px;
-}
-
 *{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  color: inherit;
   text-align: center;
+}
+
+a{
+  margin: 10px;
 }

@@ -1,11 +1,13 @@
 // import studentDB from "../mock-data/students.json";
 // import { useState } from "react";
+import allStudentsData from "../Components/helperFunctions";
 // import StudentList from "./StudentList";
 
 import { VictoryChart, VictoryGroup, VictoryBar, VictoryAxis } from "victory";
 
-function Student({studentName, singleStudentData, showDifficultyRating, showFunRating}) {
-console.log(studentName, "stujdentName");
+function Student({studentName, studentData,singleStudentData, showDifficultyRating, showFunRating}) {
+// console.log(studentData, "studentData");
+// console.log(showDifficultyRating);
   // const handleChange = () => {
   //   const evelyn = studentDB.filter((student) => student.name === "Evelyn");
   //   setFunData(evelyn);
@@ -15,7 +17,7 @@ console.log(studentName, "stujdentName");
   return (
     <>
 
-      {/* //   ticklabels is ticks, padding = distance from axis, tickformat = how ticks are displayed, domain= range of ticks */}
+      
       <VictoryChart domainPadding={5}>
         <VictoryAxis style={{ tickLabels: { angle: 80, fontSize: 5 } }} />
 
