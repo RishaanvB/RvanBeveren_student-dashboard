@@ -1,7 +1,13 @@
+
+
 body {
-  color: blue;
+  color: red;
 }
 
 a  {
   margin: 20px;
+}
+
+*{
+  text-align: center;
 }
