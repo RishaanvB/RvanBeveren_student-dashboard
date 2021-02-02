@@ -5,10 +5,10 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import StudentNav from "./Containers/StudentNav";
-import StudentDetails from "./Components/StudentDetails";
-import AssignmentNav from "./Containers/AssignmentNav";
-import AssignmentDetails from "./Components/AssignmentDetails";
+import StudentNav from "./Navigation/StudentNav";
+import StudentDetails from "./Containers/StudentDetails";
+import AssignmentNav from "./Navigation/AssignmentNav";
+import AssignmentDetails from "./Containers/AssignmentDetails";
 function App() {
   return (
     <div>

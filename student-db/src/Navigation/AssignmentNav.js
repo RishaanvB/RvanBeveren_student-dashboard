@@ -1,4 +1,4 @@
-import allStudentsData from "../Components/helperFunctions";
+import allStudentsData from "../helperfunctions/helperFunctions";
 
 import { Link } from "react-router-dom";
 const AssignmentNav = () => {

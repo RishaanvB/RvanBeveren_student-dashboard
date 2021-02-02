@@ -1,10 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import Student from "../Containers/Student";
-// import studentDB from "../mock-data/students.json";
-// import AllStudents from "./AllStudents";
-import RatingCheckboxForm from "./RatingCheckboxForm";
-import allStudentsData from "./helperFunctions";
+import Student from "../Components/Student";
+import RatingCheckboxForm from "../Components/RatingCheckboxForm";
+import allStudentsData from "../helperfunctions/helperFunctions";
 
 const StudentDetails = () => {
   const { name } = useParams();

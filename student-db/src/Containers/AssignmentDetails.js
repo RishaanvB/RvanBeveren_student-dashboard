@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import Assignment from "../Containers/Assignment";
-import allStudentsData from "./helperFunctions";
+import Assignment from "../Components/Assignment";
+import allStudentsData from "../helperfunctions/helperFunctions";
 
 const AssignmentDetails = () => {
   const { assignment } = useParams();

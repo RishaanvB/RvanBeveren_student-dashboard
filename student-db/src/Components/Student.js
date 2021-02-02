@@ -1,9 +1,15 @@
-import allStudentsData from "../Components/helperFunctions";
 
 import { VictoryChart, VictoryGroup, VictoryBar, VictoryAxis } from "victory";
-import { useState, useEffect } from "react";
 
-function Assignment({ singleAssignmentData, showFunRating }) {
+function Student({
+  studentName,
+  getAssignmentRating,
+  singleStudentData,
+  showDifficultyRating,
+  assignment,
+  showFunRating,
+  showAssignment,
+}) {
   return (
     <>
       <VictoryChart domainPadding={5}>
@@ -17,7 +23,13 @@ function Assignment({ singleAssignmentData, showFunRating }) {
         />
 
         <VictoryGroup offset={2} colorScale={"qualitative"}>
-          <VictoryBar data={singleAssignmentData} x={"name"} y={"funRating"} />
+          {showFunRating && (
+            <VictoryBar
+              data={singleStudentData}
+              x={"assignment"}
+              y={"funRating"}
+            />
+          )}
 
           {/*  { showDifficultyRating && <VictoryBar
             data={singleStudentData}
@@ -30,4 +42,4 @@ function Assignment({ singleAssignmentData, showFunRating }) {
   );
 }
 
-export default Assignment;
+export default Student;
