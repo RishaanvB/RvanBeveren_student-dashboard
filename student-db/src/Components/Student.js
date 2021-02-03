@@ -35,11 +35,11 @@ function Student({
           <VictoryGroup offset={2} colorScale={"qualitative"}>
             {showFunRating && (
               <VictoryBar 
-              animate={{duration: 500}} data={student} x={"assignment"} y={"funRating"} />
+              data={student} x={"assignment"} y={"funRating"} />
             )}
 
              { showDifficultyRating && <VictoryBar
-             animate={{duration: 500}} 
+             
             data={student}
             x={"assignment"}
             y={"difficultyRating"}
@@ -62,12 +62,12 @@ function Student({
           <VictoryGroup offset={2} colorScale={"qualitative"}>
             {showFunRating && (
               <VictoryLine 
-              animate={{duration: 500}} data={student} x={"assignment"} y={"funRating"} />
+              data={student} x={"assignment"} y={"funRating"} />
             )}
 
             {showDifficultyRating && (
               <VictoryLine
-              animate={{duration: 500}} 
+              
                 data={student}
                 x={"assignment"}
                 y={"difficultyRating"}

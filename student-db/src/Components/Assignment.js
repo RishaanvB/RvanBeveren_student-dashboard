@@ -18,12 +18,19 @@ function Assignment({
           tickFormat={[1, 2, 3, 4, 5]}
           style={{ tickLabels: { fontSize: 8, padding: 5 } }}
         />
+         <VictoryAxis
+         orientation={"right"}
+          dependentAxis={true}
+          domain={[0, 4]}
+          tickFormat={[1, 2, 3, 4, 5]}
+          style={{ tickLabels: { fontSize: 8, padding: 5 } }}
+        />
 
         <VictoryGroup 
-       offset={7} colorScale={"qualitative"}>
+       offset={7} >
           {showFunRating && (
             <VictoryBar
-            animate={{duration: 500}} 
+            colorScale={"blue"}
               data={singleAssignmentData}
               x={"name"}
               y={"funRating"}
@@ -32,7 +39,7 @@ function Assignment({
 
           {showDifficultyRating && (
             <VictoryBar
-            animate={{duration: 500}} 
+            colorScale={"red"}
               data={singleAssignmentData}
               x={"name"}
               y={"difficultyRating"}
