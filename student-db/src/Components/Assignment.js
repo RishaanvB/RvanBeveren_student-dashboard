@@ -1,4 +1,3 @@
-
 import { VictoryChart, VictoryGroup, VictoryBar, VictoryAxis } from "victory";
 
 function Assignment({ singleAssignmentData, showFunRating }) {

@@ -5,7 +5,8 @@ import RatingCheckboxForm from "../Components/RatingCheckboxForm";
 import allStudentsData from "../helperfunctions/helperFunctions";
 
 const StudentDetails = () => {
-  const { name } = useParams();
+  const { name, assignment } = useParams();
+  // console.log(useParams());
 
   const singleStudentData = allStudentsData.filter(
     (student) => student.name === name
@@ -18,10 +19,19 @@ const StudentDetails = () => {
   const toggleShowDifficultyRating = () =>
     setShowDifficultyRating((prev) => !prev);
 
+  const [fun, setFun] = useState("funRating");
+  const [showBarChart, setShowBarChart] = useState(true);
+
+  const change = () => {
+    console.log("change linechart");
+    setShowBarChart((prev) => !prev);
+  };
+  console.log(showBarChart);
   return (
     <div>
-      <h1>StudentDetails of {name} </h1>
+      <button onClick={change}>Change </button>
 
+      <h1>StudentDetails of {name} </h1>
       <RatingCheckboxForm
         toggleShowFunRating={toggleShowFunRating}
         toggleShowDifficultyRating={toggleShowDifficultyRating}
@@ -30,6 +40,8 @@ const StudentDetails = () => {
       />
 
       <Student
+        showBarChart={showBarChart}
+        fun={fun}
         studentName={name}
         singleStudentData={singleStudentData}
         showFunRating={showFunRating}
