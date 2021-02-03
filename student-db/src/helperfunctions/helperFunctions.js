@@ -36,7 +36,7 @@ const getAvgRating = (array, funRating, difficultyRating) => {
       item.arrayDifficultyRating.reduce(reducer) /
       item.arrayDifficultyRating.length;
     return {
-      name: "All",
+      name: "Average",
       assignment: item.assignment,
       difficultyRating: avgDifficultyNumber,
       funRating: avgFunNumber,

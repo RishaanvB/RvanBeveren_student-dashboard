@@ -3,13 +3,12 @@ import { useEffect, useState } from "react";
 import Student from "../Components/Student";
 import RatingCheckboxForm from "../Components/RatingCheckboxForm";
 import allStudentsData from "../helperfunctions/helperFunctions";
-import Assignmentsform from "../Components/AssignmentsForm";
 const StudentDetails = () => {
   let location = useLocation();
   // console.log(location);
-  const { name, assignment } = useParams();
+  const { name } = useParams();
   // console.log(useParams());
-
+console.log(name, "name in studentdetails");
   const singleStudentData = allStudentsData.filter(
     (student) => student.name === name
   );
@@ -22,9 +21,9 @@ const StudentDetails = () => {
     [location, name]
   );
 
-  const singleAssignmentData = allStudentsData.filter(
-    (student) => student.assignment === assignment
-  );
+  // const singleAssignmentData = allStudentsData.filter(
+  //   (student) => student.assignment === assignment
+  // );
 
   const [showFunRating, setShowFunRating] = useState(true);
   const [showDifficultyRating, setShowDifficultyRating] = useState(true);
@@ -39,7 +38,9 @@ const StudentDetails = () => {
     console.log("handleChartChange linechart");
     setShowBarChart((prev) => !prev);
   };
-  // console.log(showBarChart);
+  console.log("hey");
+console.log(name, "name in studentdetails bottom");
+
   return (
     <div>
       <button onClick={handleChartChange}>handleChartChange </button>

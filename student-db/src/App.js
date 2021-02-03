@@ -18,7 +18,7 @@ function App() {
         <AssignmentNav />
         <Switch>
           <Route exact path="/">
-            <Redirect to="/students/All" />
+            <Redirect to="/students/Average" />
           </Route>
 
           <Route path="/students/:name">

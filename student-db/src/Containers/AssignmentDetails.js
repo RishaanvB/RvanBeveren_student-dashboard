@@ -11,8 +11,9 @@ const AssignmentDetails = () => {
   const singleAssignmentData = allStudentsData.filter(
     (student) => student.assignment === assignment
   );
-  console.log("assignmentdetauls");
-  console.log(singleAssignmentData, "ass");
+
+  // console.log("assignmentdetauls");
+  // console.log(singleAssignmentData, "ass");
   const [showFunRating, setShowFunRating] = useState(true);
   const [showDifficultyRating, setShowDifficultyRating] = useState(true);
 
@@ -31,6 +32,7 @@ const AssignmentDetails = () => {
       />
       <Assignment
         showFunRating={showFunRating}
+        assignment={assignment}
         singleAssignmentData={singleAssignmentData}
         showDifficultyRating={showDifficultyRating}
       />
