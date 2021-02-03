@@ -1,10 +1,16 @@
 import { VictoryChart, VictoryGroup, VictoryBar, VictoryAxis } from "victory";
 
-function Assignment({ singleAssignmentData, showFunRating }) {
+function Assignment({
+  singleAssignmentData,
+  showFunRating,
+  showDifficultyRating,
+}) {
+  console.log(showDifficultyRating);
   return (
     <>
-      <VictoryChart domainPadding={5}>
-        <VictoryAxis style={{ tickLabels: { angle: 80, fontSize: 5 } }} />
+      <VictoryChart domainPadding={15}
+       >
+        <VictoryAxis style={{ tickLabels: { angle: 0, fontSize: 5 } }} />
 
         <VictoryAxis
           dependentAxis={true}
@@ -13,14 +19,25 @@ function Assignment({ singleAssignmentData, showFunRating }) {
           style={{ tickLabels: { fontSize: 8, padding: 5 } }}
         />
 
-        <VictoryGroup offset={2} colorScale={"qualitative"}>
-          <VictoryBar data={singleAssignmentData} x={"name"} y={"funRating"} />
+        <VictoryGroup 
+       offset={7} colorScale={"qualitative"}>
+          {showFunRating && (
+            <VictoryBar
+            animate={{duration: 500}} 
+              data={singleAssignmentData}
+              x={"name"}
+              y={"funRating"}
+            />
+          )}
 
-          {/*  { showDifficultyRating && <VictoryBar
-            data={singleStudentData}
-            x={"assignment"}
-            y={"difficultyRating"}
-          />} */}
+          {showDifficultyRating && (
+            <VictoryBar
+            animate={{duration: 500}} 
+              data={singleAssignmentData}
+              x={"name"}
+              y={"difficultyRating"}
+            />
+          )}
         </VictoryGroup>
       </VictoryChart>
     </>

@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import Assignment from "../Components/Assignment";
+import RatingCheckboxForm from "../Components/RatingCheckboxForm";
+
 import allStudentsData from "../helperfunctions/helperFunctions";
 
 const AssignmentDetails = () => {
@@ -21,10 +23,16 @@ const AssignmentDetails = () => {
   return (
     <div>
       <h1>AssignmentDetails of {assignment} </h1>
-
+      <RatingCheckboxForm
+        toggleShowFunRating={toggleShowFunRating}
+        toggleShowDifficultyRating={toggleShowDifficultyRating}
+        showDifficultyRating={showDifficultyRating}
+        showFunRating={showFunRating}
+      />
       <Assignment
         showFunRating={showFunRating}
         singleAssignmentData={singleAssignmentData}
+        showDifficultyRating={showDifficultyRating}
       />
     </div>
   );

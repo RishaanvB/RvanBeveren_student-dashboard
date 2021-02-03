@@ -7,6 +7,7 @@ import {
 } from "victory";
 
 function Student({
+  student,
   showBarChart,
   studentName,
   getAssignmentRating,
@@ -20,7 +21,8 @@ function Student({
   return (
     <>
       {showBarChart ? (
-        <VictoryChart domainPadding={5}>
+        <VictoryChart domainPadding={5}
+       >
           <VictoryAxis style={{ tickLabels: { angle: 80, fontSize: 5 } }} />
 
           <VictoryAxis
@@ -32,14 +34,16 @@ function Student({
 
           <VictoryGroup offset={2} colorScale={"qualitative"}>
             {showFunRating && (
-              <VictoryBar data={singleStudentData} x={"assignment"} y={fun} />
+              <VictoryBar 
+              animate={{duration: 500}} data={student} x={"assignment"} y={"funRating"} />
             )}
 
-            {/*  { showDifficultyRating && <VictoryBar
-            data={singleStudentData}
+             { showDifficultyRating && <VictoryBar
+             animate={{duration: 500}} 
+            data={student}
             x={"assignment"}
             y={"difficultyRating"}
-          />} */}
+          />}
           </VictoryGroup>
         </VictoryChart>
       ) : (
@@ -57,18 +61,18 @@ function Student({
 
           <VictoryGroup offset={2} colorScale={"qualitative"}>
             {showFunRating && (
-              <VictoryLine
-                data={singleStudentData}
-                x={"assignment"}
-                y={"funRating"}
-              />
+              <VictoryLine 
+              animate={{duration: 500}} data={student} x={"assignment"} y={"funRating"} />
             )}
 
-            {/*  { showDifficultyRating && <VictoryLine
-          data={singleStudentData}
-          x={"assignment"}
-          y={"difficultyRating"}
-        />} */}
+            {showDifficultyRating && (
+              <VictoryLine
+              animate={{duration: 500}} 
+                data={student}
+                x={"assignment"}
+                y={"difficultyRating"}
+              />
+            )}
           </VictoryGroup>
         </VictoryChart>
       )}
