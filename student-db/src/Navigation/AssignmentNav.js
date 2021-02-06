@@ -1,18 +1,17 @@
 import allStudentsData from "../helperfunctions/helperFunctions";
 
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const AssignmentNav = () => {
   const assignments = [
     ...new Set(allStudentsData.map((student) => student.assignment)),
   ];
   // console.log(students, "students in AssignmentNav");
   return (
-    <div>
-      <h1>AssignmentNav</h1>
+    <div className={"ass-list"}>
       {assignments.map((assignment) => (
-        <Link to={`/assignments/${assignment}`} key={assignment}>
+        <NavLink activeClassName={"active-link"} to={`/assignments/${assignment}`} key={assignment}>
           {assignment}
-        </Link>
+        </NavLink>
       ))}
     </div>
   );

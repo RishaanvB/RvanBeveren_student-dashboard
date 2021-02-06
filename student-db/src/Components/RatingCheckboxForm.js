@@ -5,8 +5,8 @@ const RatingCheckboxForm = ({
   toggleShowDifficultyRating,
 }) => {
   return (
-    <div className="inputForm">
-      <label htmlFor="funRating">Fun rating</label>
+    <div className="input-form">
+      <label htmlFor="funRating">Show enjoyment
       <input
         onChange={toggleShowFunRating}
         type="checkbox"
@@ -15,7 +15,8 @@ const RatingCheckboxForm = ({
         value="funRating"
         checked={showFunRating}
       />
-      <label htmlFor="difficultyRating">Difficulty rating</label>
+      </label>
+      <label htmlFor="difficultyRating">Show difficulty
       <input
         onChange={toggleShowDifficultyRating}
         type="checkbox"
@@ -24,6 +25,7 @@ const RatingCheckboxForm = ({
         value="difficultyRating"
         checked={showDifficultyRating}
       />
+      </label>
     </div>
   );
 };

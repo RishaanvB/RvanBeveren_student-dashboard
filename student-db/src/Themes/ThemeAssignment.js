@@ -9,7 +9,14 @@ const lime300 = "#DCE775";
 const lightGreen500 = "#8BC34A";
 const teal700 = "#00796B";
 const cyan900 = "#006064";
-const colors = [deepOrange600, yellow200, lime300, lightGreen500, teal700, cyan900];
+const colors = [
+  deepOrange600,
+  yellow200,
+  lime300,
+  lightGreen500,
+  teal700,
+  cyan900,
+];
 const blueGrey50 = "#ECEFF1";
 const blueGrey300 = "#90A4AE";
 const blueGrey700 = "#455A64";
@@ -29,8 +36,8 @@ const padding = 2;
 // baseprops = lengtes graph zelf
 const baseProps = {
   width: 250,
-  height: 100,
-  padding: 15
+  height: 95,
+  padding: 15,
 };
 // *
 // * Labels
@@ -42,7 +49,7 @@ const baseLabelStyles = {
   padding,
   fill: blueGrey700,
   stroke: "transparent",
-  strokeWidth: 0
+  strokeWidth: 0,
 };
 
 const centeredLabelStyles = assign({ textAnchor: "middle" }, baseLabelStyles);
@@ -54,7 +61,6 @@ const strokeLinecap = "round";
 const strokeLinejoin = "round";
 
 const theme = {
-  
   axis: assign(
     {
       style: {
@@ -70,14 +76,13 @@ const theme = {
         //   stroke: "blue"
         // }),
 
-        
-        grid: {  
-        //   fill: "none",
+        grid: {
+          //   fill: "none",
           stroke: blueGrey50,
           strokeDasharray,
           strokeLinecap,
-        //   strokeLinejoin,
-          pointerEvents: "painted"
+          //   strokeLinejoin,
+          pointerEvents: "painted",
         },
         /* size =  grootte van ticks streepjes*/
         ticks: {
@@ -85,67 +90,66 @@ const theme = {
           size: 1,
           stroke: blueGrey300,
           strokeWidth: 1,
-        //   strokeLinecap,
-        //   strokeLinejoin
+          //   strokeLinecap,
+          //   strokeLinejoin
         },
         tickLabels: assign({}, baseLabelStyles, {
-          fill: blueGrey700
-        })
-      }
+          fill: blueGrey700,
+        }),
+      },
     },
     baseProps
   ),
-  
+
   bar: assign(
     {
       style: {
         data: {
-          fill: blueGrey700,
-          padding,
-          strokeWidth: 0
+          // fill: "#1687a7",
+          // padding,
+          strokeWidth: 0,
         },
-        labels: baseLabelStyles
-      }
+        // labels: baseLabelStyles,
+      },
     },
-    baseProps
+    // baseProps
   ),
-  
-  
+
   chart: baseProps,
-//   errorbar: assign(
-//     {
-//       borderWidth: 1,
-//       style: {
-//         data: {
-//           fill: "transparent",
-//           opacity: 1,
-//           stroke: blueGrey700,
-//           strokeWidth: 4
-//         },
-//         labels: baseLabelStyles
-//       }
-//     },
-//     baseProps
-//   ),
-//   group: assign(
-//     {
-//       colorScale: colors
-//     },
-//     baseProps
-//   ),
-//   histogram: assign(
-//     {
-//       style: {
-//         data: {
-//           fill: blueGrey700,
-//           stroke: grey900,
-//           strokeWidth: 2
-//         },
-//         labels: baseLabelStyles
-//       }
-//     },
-//     baseProps
-//   ),
+  //   errorbar: assign(
+  //     {
+  //       borderWidth: 1,
+  //       style: {
+  //         data: {
+  //           fill: "transparent",
+  //           opacity: 1,
+  //           stroke: blueGrey700,
+  //           strokeWidth: 4
+  //         },
+  //         labels: baseLabelStyles
+  //       }
+  //     },
+  //     baseProps
+  //   ),
+  //   group: assign(
+  //     {
+  //       colorScale: colors
+  //     },
+  //     baseProps
+  //   ),
+  //   histogram: assign(
+  //     {
+  //       style: {
+  //         data: {
+  //           fill: blueGrey700,
+  //           stroke: grey900,
+  //           strokeWidth: 2
+  //         },
+  //         labels: baseLabelStyles
+  //       }
+  //     },
+  //     baseProps
+  //   ),
   legend: {
     colorScale: colors,
     gutter: 10,
@@ -153,11 +157,11 @@ const theme = {
     titleOrientation: "top",
     style: {
       data: {
-        type: "circle"
+        type: "square",
       },
       labels: baseLabelStyles,
-      title: assign({}, baseLabelStyles, { padding: 5 })
-    }
+      title: assign({}, baseLabelStyles, { padding: 5 }),
+    },
   },
   line: assign(
     {
@@ -166,78 +170,78 @@ const theme = {
           fill: "transparent",
           opacity: 1,
           stroke: blueGrey700,
-          strokeWidth: 2
+          strokeWidth: 2,
         },
-        labels: baseLabelStyles
-      }
+        labels: baseLabelStyles,
+      },
     },
     baseProps
   ),
-//   pie: assign(
-//     {
-//       colorScale: colors,
-//       style: {
-//         data: {
-//           padding,
-//           stroke: blueGrey50,
-//           strokeWidth: 1
-//         },
-//         labels: assign({}, baseLabelStyles, { padding: 20 })
-//       }
-//     },
-//     baseProps
-//   ),
-//   scatter: assign(
-//     {
-//       style: {
-//         data: {
-//           fill: blueGrey700,
-//           opacity: 1,
-//           stroke: "transparent",
-//           strokeWidth: 0
-//         },
-//         labels: baseLabelStyles
-//       }
-//     },
-//     baseProps
-//   ),
-//   stack: assign(
-//     {
-//       colorScale: colors
-//     },
-//     baseProps
-//   ),
+  //   pie: assign(
+  //     {
+  //       colorScale: colors,
+  //       style: {
+  //         data: {
+  //           padding,
+  //           stroke: blueGrey50,
+  //           strokeWidth: 1
+  //         },
+  //         labels: assign({}, baseLabelStyles, { padding: 20 })
+  //       }
+  //     },
+  //     baseProps
+  //   ),
+  //   scatter: assign(
+  //     {
+  //       style: {
+  //         data: {
+  //           fill: blueGrey700,
+  //           opacity: 1,
+  //           stroke: "transparent",
+  //           strokeWidth: 0
+  //         },
+  //         labels: baseLabelStyles
+  //       }
+  //     },
+  //     baseProps
+  //   ),
+  //   stack: assign(
+  //     {
+  //       colorScale: colors
+  //     },
+  //     baseProps
+  //   ),
   tooltip: {
     style: assign({}, baseLabelStyles, { padding: 0, pointerEvents: "none" }),
     flyoutStyle: {
       stroke: grey900,
       strokeWidth: 1,
       fill: "#f0f0f0",
-      pointerEvents: "none"
+      pointerEvents: "none",
     },
     flyoutPadding: 5,
     cornerRadius: 5,
-    pointerLength: 10
+    pointerLength: 10,
   },
-//   voronoi: assign(
-//     {
-//       style: {
-//         data: {
-//           fill: "transparent",
-//           stroke: "transparent",
-//           strokeWidth: 0
-//         },
-//         labels: assign({}, baseLabelStyles, { padding: 5, pointerEvents: "none" }),
-//         flyout: {
-//           stroke: grey900,
-//           strokeWidth: 1,
-//           fill: "#f0f0f0",
-//           pointerEvents: "none"
-//         }
-//       }
-//     },
-//     baseProps
-//   )
+  //   voronoi: assign(
+  //     {
+  //       style: {
+  //         data: {
+  //           fill: "transparent",
+  //           stroke: "transparent",
+  //           strokeWidth: 0
+  //         },
+  //         labels: assign({}, baseLabelStyles, { padding: 5, pointerEvents: "none" }),
+  //         flyout: {
+  //           stroke: grey900,
+  //           strokeWidth: 1,
+  //           fill: "#f0f0f0",
+  //           pointerEvents: "none"
+  //         }
+  //       }
+  //     },
+  //     baseProps
+  //   )
 };
 
-export default theme
+export default theme;

@@ -1,18 +1,27 @@
 import allStudentsData from "../helperfunctions/helperFunctions";
-
-import { Link } from "react-router-dom";
+import logo from "../images/logo.png";
+import { NavLink, Link } from "react-router-dom";
 const StudentNav = () => {
   const students = [...new Set(allStudentsData.map((student) => student.name))];
   // console.log(students, "students in StudentNav");
   return (
-    <div>
-      <h1>StudentNav</h1>
-      {students.map((student) => (
-        <Link to={`/students/${student}`} key={student}>
-          {student}
+    <header>
+      <div className={"nav-bar"}>
+        <Link to="/" className={"logo"}>
+          <img src={logo} alt="winc logo" />
         </Link>
-      ))}
-    </div>
+        <nav className={"nav-links"}>
+          {students.map((student) => (
+            <NavLink
+              activeClassName="active-link"
+              to={`/students/${student}`}
+              key={student}>
+              {student}
+            </NavLink>
+          ))}
+        </nav>
+      </div>
+    </header>
   );
 };
 

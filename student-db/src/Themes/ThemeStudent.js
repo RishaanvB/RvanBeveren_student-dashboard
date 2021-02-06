@@ -14,12 +14,13 @@ const blueGrey50 = "#ECEFF1";
 const blueGrey300 = "#90A4AE";
 const blueGrey700 = "#455A64";
 const grey900 = "#212121";
+
 // *
 // * Typography
 // *
 const sansSerif = "'Helvetica Neue', 'Helvetica', sans-serif";
 const letterSpacing = "normal";
-const fontSize = 4;
+const fontSize = 3;
 // *
 // * Layout
 // *
@@ -144,19 +145,20 @@ const theme = {
   //     },
   //     baseProps
   //   ),
-  // legend: {
-  //   // colorScale: colors,
-  //   gutter: 10,
-  //   orientation: "vertical",
-  //   titleOrientation: "top",
-  //   style: {
-  //     data: {
-  //       type: "circle"
-  //     },
-  //     labels: baseLabelStyles,
-  //     title: assign({}, baseLabelStyles, { padding: 5 })
-  //   }
-  // },
+  legend: {
+    // colorScale: colors,
+    // gutter: 10,
+    orientation: "vertical",
+    titleOrientation: "top",
+    style: {
+      data: {
+        type: "square",
+        padding: 1,
+      },
+      labels: baseLabelStyles,
+      title: assign({}, baseLabelStyles, { padding: 3 }),
+    },
+  },
   line: assign(
     {
       style: {
