@@ -5,36 +5,31 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import StudentNav from "./Navigation/StudentNav";
 import StudentDetails from "./Containers/StudentDetails";
 import AssignmentNav from "./Navigation/AssignmentNav";
 import AssignmentDetails from "./Containers/AssignmentDetails";
 import RatingCheckboxForm from "./Components/RatingCheckboxForm";
-import {useParams} from "react-router-dom"
 function App() {
-
-  
   const [showBarChart, setShowBarChart] = useState(true);
   const [showChartBtn, setShowChartBtn] = useState(true);
-  console.log(showChartBtn);
-  
+
   const [showFunRating, setShowFunRating] = useState(true);
   const [showDifficultyRating, setShowDifficultyRating] = useState(true);
+
   const toggleShowFunRating = () => setShowFunRating((prev) => !prev);
   const toggleShowDifficultyRating = () =>
-  setShowDifficultyRating((prev) => !prev);
+    setShowDifficultyRating((prev) => !prev);
 
   const handleChartChange = () => {
-    console.log("handleChartChange linechart");
     setShowBarChart((prev) => !prev);
   };
-  const showChartBtnDisplay = (boolean)=>{
-    setShowChartBtn(boolean)
-  }
+  const showChartBtnDisplay = (boolean) => {
+    setShowChartBtn(boolean);
+  };
   return (
     <div className={"app-container"}>
-      {/* <Container /> */}
       <Router>
         <StudentNav />
         <div className={"displays"}>
@@ -46,9 +41,17 @@ function App() {
               showDifficultyRating={showDifficultyRating}
               showFunRating={showFunRating}
             />
-           {showChartBtn ? <button className={"btn-linechart"} onClick={handleChartChange}>
-              {showBarChart ? "Show Linechart" : "Show Barchart"}
-            </button> : <button disabled className={"btn-linechart"}> Unavailable </button>}
+
+            {showChartBtn ? (
+              <button className={"btn-linechart"} onClick={handleChartChange}>
+                {showBarChart ? "Show Linechart" : "Show Barchart"}
+              </button>
+            ) : (
+              <button disabled className={"btn-linechart"}>
+                {" "}
+                Unavailable{" "}
+              </button>
+            )}
           </div>
         </div>
 
@@ -62,16 +65,13 @@ function App() {
               showBarChart={showBarChart}
               showDifficultyRating={showDifficultyRating}
               showFunRating={showFunRating}
-            showChartBtnDisplay={showChartBtnDisplay}
-
+              showChartBtnDisplay={showChartBtnDisplay}
             />
           </Route>
 
           <Route path="/assignments/:assignment">
             <AssignmentDetails
-            showChartBtnDisplay={showChartBtnDisplay}
-              // showBarChart={showBarChart}
-
+              showChartBtnDisplay={showChartBtnDisplay}
               showDifficultyRating={showDifficultyRating}
               showFunRating={showFunRating}
             />
@@ -83,7 +83,3 @@ function App() {
 }
 
 export default App;
-
-// graphscontainer
-//          allstudents
-//          inidividueel student

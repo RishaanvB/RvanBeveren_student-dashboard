@@ -9,6 +9,9 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+body {
+  height: 100vh;
+}
 
 .app-container {
   position: relative;
@@ -46,6 +49,7 @@ header {
 }
 
 .ass-list {
+  position: relative;
   width: max-content;
   margin: 20px;
   display: flex;
@@ -54,6 +58,9 @@ header {
   overflow: auto;
 }
 
+.ass-list::-webkit-scrollbar {
+  display: none;
+}
 .displays {
   position: absolute;
   z-index: 100;
@@ -105,6 +112,22 @@ input {
   background: #585858;
 }
 
+.ass-list a {
+  padding: 5px 0;
+  border-top: 2px dotted #7f7f7f;
+}
+
 svg {
-  margin-top: 100px;
+  padding-top: 100px;
+}
+
+.icon {
+  padding: 0;
+  position: absolute;
+  left: -10px;
+  top: 75px;
+}
+
+.assignment-container {
+  position: relative;
 }

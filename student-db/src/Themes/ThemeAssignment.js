@@ -52,13 +52,13 @@ const baseLabelStyles = {
   strokeWidth: 0,
 };
 
-const centeredLabelStyles = assign({ textAnchor: "middle" }, baseLabelStyles);
+// const centeredLabelStyles = assign({ textAnchor: "middle" }, baseLabelStyles);
 // *
 // * Strokes
 // *
 const strokeDasharray = ["25", "10"];
 const strokeLinecap = "round";
-const strokeLinejoin = "round";
+// const strokeLinejoin = "round";
 
 const theme = {
   axis: assign(
@@ -111,7 +111,7 @@ const theme = {
         },
         // labels: baseLabelStyles,
       },
-    },
+    }
     // baseProps
   ),
 

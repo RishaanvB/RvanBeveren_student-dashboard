@@ -3,7 +3,6 @@ import logo from "../images/logo.png";
 import { NavLink, Link } from "react-router-dom";
 const StudentNav = () => {
   const students = [...new Set(allStudentsData.map((student) => student.name))];
-  // console.log(students, "students in StudentNav");
   return (
     <header>
       <div className={"nav-bar"}>

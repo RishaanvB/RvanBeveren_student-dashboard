@@ -27,10 +27,10 @@ const fontSize = 3;
 
 // padding= distance ticklabels? and graph axis
 const padding = 1;
-// baseprops = lengtes graph zelf
+// baseprops = afmetingen graph zelf
 const baseProps = {
   width: 250,
-  height: 95,
+  height: 90,
   padding: 15,
 };
 // *
@@ -46,7 +46,7 @@ const baseLabelStyles = {
   strokeWidth: 0,
 };
 
-const centeredLabelStyles = assign({ textAnchor: "middle" }, baseLabelStyles);
+// const centeredLabelStyles = assign({ textAnchor: "middle" }, baseLabelStyles);
 // *
 // * Strokes
 // *
