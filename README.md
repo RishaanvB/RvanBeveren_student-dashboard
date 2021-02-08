@@ -6,8 +6,19 @@ Ik heb de optionele keuze optie2 niet gedaan:
 
 > Optie 2: Als gebruiker wil ik, naast het filteren op 1 persoon, ook kunnen filteren op meerdere personen. Ik wil daarom bij het overzicht van mijn studenten een checkbox zien die ik kan...
 
-Omdat ik heb gekozen om de studenten dynamisch te renderen via de useParams() lukte het mij niet om state toe te voegen aan StudentDetails.js. (infinite loop). Ik ben er later achter gekomen dat ik dit misschien kan oplossen door een functie in een useEffect() te plaatsen, maar dat heb ik niet uitgeprobeerd. 
+Omdat ik heb gekozen om de studenten dynamisch te renderen via de useParams() lukte het mij niet om state toe te voegen aan StudentDetails.js. (infinite loop). 
+edit***: om het iets duidelijker te maken; 
 
+ik heb nu de gegevens van de studenten en  het gemiddelde van de studenten in een json. Die importeer ik in StudentDetails.js waarbij ik de data die de grafiek gebruikt filter op naam die binnenkomt via de useParams()-->  (const studentData = allStudentsData.filter((student) => student.name === name);) 
+<VictoryBar
+     data={student}
+     />         
+En als ik dit via state probeerde te veranderen;
+=== const [student, setStudent] = useState()
+    setStudent(studentData)  ====
+
+kreeg ik een infinite loop. Denk dat dat komt, omdat het component eerst wordt gerenderd, daarna wordt via setStudent() state veranderd waardoor die het component nog een x rendert, en dan wordt setStudent() nogmaals gecalled, waardoor die het component nogmaals rendert etc. etc.
+Ik ben er later achter gekomen dat ik dit misschien kan oplossen door een functie in een useEffect() te plaatsen, maar dat heb ik niet uitgeprobeerd. 
 
 Bij optie 4: 
 > Optie 4: Als gebruiker wil ik kunnen zien hoe 1 specifieke opdracht heeft gescoord. Daarom wil ik een lijst zien van alle opdrachten die ik kan aanvinken om mij een staafdiagram te laten zien met op de y-as de score (zoals eerder) en op de x-as de namen van de studenten.
